@@ -1,0 +1,546 @@
+
+/* ==========================================
+   LOCALMIND AI
+   FUTURISTIC GLASSMORPHISM THEME
+========================================== */
+
+:root {
+  --neon-purple: #a78bfa;
+  --neon-cyan: #22d3ee;
+  --neon-blue: #60a5fa;
+  --neon-pink: #f472b6;
+  --glass-border: rgba(167, 139, 250, 0.2);
+  --glass-bg: rgba(18, 25, 47, 0.85);
+}
+
+/* ==========================================
+   APPLICATION BACKGROUND
+========================================== */
+
+.shell.futuristic-shell {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(
+      ellipse at 22% 8%,
+      rgba(109, 40, 217, 0.15),
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 88% 80%,
+      rgba(6, 182, 212, 0.08),
+      transparent 42%
+    ),
+    #080d1b;
+}
+
+.shell.futuristic-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(
+      rgba(167, 139, 250, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(167, 139, 250, 0.025) 1px,
+      transparent 1px
+    );
+  background-size: 45px 45px;
+}
+
+.ambient {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  filter: blur(95px);
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.ambient-one {
+  top: -150px;
+  right: 12%;
+  background: #7c3aed;
+}
+
+.ambient-two {
+  right: -140px;
+  bottom: -140px;
+  background: #0891b2;
+}
+
+/* ==========================================
+   GLASS SIDEBAR
+========================================== */
+
+.sidebar {
+  background: rgba(12, 18, 35, 0.94);
+  border-right-color: var(--glass-border);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+.brand-mark {
+  background: linear-gradient(
+    135deg,
+    #3b267e,
+    #1b3d75
+  );
+  border-color: rgba(167, 139, 250, 0.45);
+  box-shadow: 0 0 24px rgba(139, 92, 246, 0.18);
+}
+
+.brand-copy strong span {
+  background: linear-gradient(
+    90deg,
+    #c4b5fd,
+    #67e8f9
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.new-actions button {
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.16),
+    rgba(139, 92, 246, 0.08)
+  );
+  border-color: rgba(167, 139, 250, 0.25);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.new-actions button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: #a78bfa;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+}
+
+.conversation.selected {
+  background: linear-gradient(
+    90deg,
+    rgba(124, 58, 237, 0.25),
+    rgba(59, 130, 246, 0.07)
+  );
+  box-shadow: inset 3px 0 0 #a78bfa;
+}
+
+.sidebar-security {
+  color: #a78bfa;
+}
+
+/* ==========================================
+   TOP BAR
+========================================== */
+
+.topbar {
+  background: rgba(11, 16, 34, 0.82);
+  border-bottom-color: var(--glass-border);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.model-pill {
+  background: rgba(34, 211, 238, 0.055);
+  border-color: rgba(34, 211, 238, 0.25);
+}
+
+.status-dot {
+  box-shadow:
+    0 0 8px rgba(52, 211, 153, 0.75),
+    0 0 18px rgba(52, 211, 153, 0.3);
+  animation: status-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes status-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 8px rgba(52, 211, 153, 0.55);
+  }
+
+  50% {
+    box-shadow:
+      0 0 14px rgba(52, 211, 153, 0.9),
+      0 0 26px rgba(52, 211, 153, 0.3);
+  }
+}
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.hero-overline {
+  color: #a5b4fc;
+}
+
+.hero-overline-dot {
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.7);
+}
+
+.welcome-icon {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    #35216d,
+    #263e87,
+    #135a75
+  );
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  box-shadow:
+    0 0 35px rgba(139, 92, 246, 0.3),
+    0 0 80px rgba(59, 130, 246, 0.1);
+  animation: floating-ai 5s ease-in-out infinite;
+}
+
+.welcome-icon::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border: 1px solid rgba(167, 139, 250, 0.15);
+  border-radius: 28px;
+  pointer-events: none;
+}
+
+@keyframes floating-ai {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.hero-welcome h1 {
+  color: #f8fafc;
+}
+
+.hero-welcome h1 em {
+  background: linear-gradient(
+    90deg,
+    #c4b5fd,
+    #67e8f9
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-kicker {
+  color: #a5b4fc;
+}
+
+.hero-actions button {
+  background: rgba(27, 34, 64, 0.9);
+  border-color: rgba(167, 139, 250, 0.35);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.hero-actions button:first-child {
+  background: linear-gradient(
+    135deg,
+    #7c3aed,
+    #4f46e5
+  );
+  border-color: rgba(167, 139, 250, 0.55);
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(124, 58, 237, 0.22);
+}
+
+.hero-actions button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  border-color: #a78bfa;
+  box-shadow: 0 10px 28px rgba(109, 40, 217, 0.2);
+}
+
+/* ==========================================
+   FOUR FEATURE CARDS
+========================================== */
+
+.shell .hero-welcome .capability-grid > button.capability-card {
+  background: linear-gradient(
+    145deg,
+    rgba(27, 35, 64, 0.97),
+    rgba(15, 22, 43, 0.97)
+  );
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  border-radius: 17px;
+  color: #f8fafc;
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.shell .hero-welcome .capability-grid > button.capability-card:hover:not(:disabled) {
+  transform: translateY(-5px);
+  border-color: rgba(167, 139, 250, 0.65);
+  box-shadow:
+    0 16px 35px rgba(0, 0, 0, 0.25),
+    0 0 26px rgba(139, 92, 246, 0.12);
+}
+
+.cap-icon.violet {
+  background: rgba(139, 92, 246, 0.17);
+  color: #c4b5fd;
+}
+
+.cap-icon.cyan {
+  background: rgba(34, 211, 238, 0.13);
+  color: #67e8f9;
+}
+
+.cap-icon.pink {
+  background: rgba(244, 114, 182, 0.13);
+  color: #f9a8d4;
+}
+
+.cap-icon.amber {
+  background: rgba(251, 191, 36, 0.13);
+  color: #fcd34d;
+}
+
+.capability-card .cap-arrow {
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.capability-card:hover .cap-arrow {
+  transform: translate(2px, -2px);
+  color: #c4b5fd;
+}
+
+.capability-grid .capability-card strong {
+  color: #f8fafc;
+}
+
+.capability-grid .capability-card small {
+  color: #a1aec9;
+}
+
+/* ==========================================
+   PROMPT BUTTONS
+========================================== */
+
+.prompt-grid button {
+  background: rgba(23, 32, 56, 0.9);
+  border-color: rgba(167, 139, 250, 0.2);
+  transition: 0.2s ease;
+}
+
+.prompt-grid button:hover:not(:disabled) {
+  background: rgba(44, 42, 89, 0.65);
+  border-color: #a78bfa;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   AGENT / DOCUMENT TOOLBARS
+========================================== */
+
+.documents-bar,
+.agent-toolbar,
+.agent-panel,
+.agent-controls {
+  background: rgba(12, 18, 38, 0.65);
+  border-bottom-color: rgba(167, 139, 250, 0.13);
+  backdrop-filter: blur(12px);
+}
+
+.document-chip {
+  background: rgba(67, 56, 119, 0.22);
+  border-color: rgba(167, 139, 250, 0.28);
+}
+
+.attach-button,
+.agent-toggle,
+.agent-action {
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.23),
+    rgba(139, 92, 246, 0.17)
+  );
+  border-color: rgba(167, 139, 250, 0.32);
+  transition: 0.2s ease;
+}
+
+.attach-button:hover:not(:disabled),
+.agent-toggle:hover:not(:disabled),
+.agent-action:hover:not(:disabled) {
+  border-color: #a78bfa;
+  box-shadow: 0 0 18px rgba(139, 92, 246, 0.16);
+}
+
+.agent-toggle.active {
+  background: linear-gradient(
+    120deg,
+    #6041b7,
+    #3c5aa5
+  );
+  border-color: #a78bfa;
+}
+
+/* ==========================================
+   CHAT MESSAGE EFFECTS
+========================================== */
+
+.avatar {
+  background: linear-gradient(
+    145deg,
+    rgba(109, 40, 217, 0.32),
+    rgba(37, 99, 235, 0.18)
+  );
+  border-color: rgba(167, 139, 250, 0.42);
+  color: #c4b5fd;
+}
+
+.user-bubble {
+  background: linear-gradient(
+    135deg,
+    rgba(72, 54, 139, 0.55),
+    rgba(35, 58, 103, 0.68)
+  );
+  border-color: rgba(167, 139, 250, 0.25);
+}
+
+/* ==========================================
+   COMPOSER
+========================================== */
+
+.composer {
+  background: rgba(21, 29, 54, 0.94);
+  border-color: rgba(167, 139, 250, 0.3);
+  backdrop-filter: blur(18px);
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.22),
+    0 0 30px rgba(109, 40, 217, 0.06);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.composer:focus-within {
+  border-color: rgba(167, 139, 250, 0.8);
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.25),
+    0 0 28px rgba(139, 92, 246, 0.18);
+}
+
+.send-button {
+  background: linear-gradient(
+    135deg,
+    #a78bfa,
+    #818cf8
+  );
+  box-shadow: 0 0 18px rgba(139, 92, 246, 0.25);
+  transition: 0.2s ease;
+}
+
+.send-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.4);
+}
+
+.send-button.stop {
+  background: linear-gradient(
+    135deg,
+    #fda4af,
+    #fb7185
+  );
+}
+
+/* ==========================================
+   CHART VISUALIZATION
+========================================== */
+
+.chart-container {
+  background: rgba(17, 24, 46, 0.9);
+  border-color: rgba(167, 139, 250, 0.25);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+.chart-container:hover {
+  border-color: rgba(167, 139, 250, 0.5);
+}
+
+/* ==========================================
+   SCROLLBARS
+========================================== */
+
+.sidebar,
+.chat-scroll,
+.conversation-list {
+  scrollbar-width: thin;
+  scrollbar-color: #4c427e transparent;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #44416e;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7464bd;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 760px) {
+  .ambient {
+    width: 220px;
+    height: 220px;
+  }
+
+  .topbar {
+    backdrop-filter: blur(12px);
+  }
+
+  .composer {
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-icon,
+  .status-dot {
+    animation: none;
+  }
+
+  .capability-grid > button.capability-card,
+  .hero-actions button,
+  .new-actions button,
+  .send-button {
+    transition: none;
+  }
+}
